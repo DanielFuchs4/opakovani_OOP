@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Student {
+public class Student extends Osoba implements IVypisovatelny{
 
     private String jmeno;
     private int rocnik;
@@ -86,6 +86,23 @@ public class Student {
         }
     }
 
+    public void popis(Student student){
+        System.out.println("Stundent: "+student.getJmeno()+" (Ročník: "+student.getRocnik()+", Pruměr:"+student.getPrumer()+"), Klasifikace: "+klasifikace());
+    }
 
 
+    @Override
+    public void popis() {
+
+    }
+
+    @Override
+    public String radekVypisu() {
+        int mezery = 20 - jmeno.length();
+        StringBuilder jmenoMezery = new StringBuilder(jmeno);
+        for (int i = 0; i < mezery; i++) {
+            jmenoMezery.append(" ");
+        }
+        return jmenoMezery+"| "+rocnik+". ročník | průměr: "+prumer;
+    }
 }
