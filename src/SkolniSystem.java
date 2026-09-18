@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class SkolniSystem {
 
     ArrayList<Student> studenti = new ArrayList<>();
+    ArrayList<Osoba>  lidi = new ArrayList<>();
+
 
     public void addStudent(Student student) {
         studenti.add(student);
+        lidi.add(student);
     }
 
     public void vypis() {

@@ -43,6 +43,8 @@ public class Main {
             System.out.println("2 - vypsat studenty");
             System.out.println("3 - Hledat podle jména");
             System.out.println("4 - Konec");
+            System.out.println("5 - přidej učitele");
+            System.out.println("6 - výpis všech osob");
             System.out.println("------------------");
             System.out.println("");
             System.out.print("Výběr: ");
@@ -70,8 +72,17 @@ public class Main {
                 System.out.println(skolniSystem.najdiStudenta(jmeno));
             } else if (vyber ==4){
                 menu = false;
+            } else if (vyber ==5){
+                System.out.print("Jméno: ");
+                String jmeno = input.nextLine();
+                System.out.print("předmět: ");
+                String predmet = input.nextLine();
+                skolniSystem.lidi.add(new Ucitel(jmeno, predmet));
             }
 
+        }
+        for (int i = 0;i < skolniSystem.lidi.size();i++){
+            skolniSystem.;
         }
     }
 }

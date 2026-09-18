@@ -84,21 +84,17 @@ public class Student extends Osoba implements IVypisovatelny{
         } else {
             return "Nedostatečný";
         }
+
+
     }
-
-    public void popis(Student student){
-        System.out.println("Stundent: "+student.getJmeno()+" (Ročník: "+student.getRocnik()+", Pruměr:"+student.getPrumer()+"), Klasifikace: "+klasifikace());
-    }
-
-
     @Override
     public void popis() {
-
+        System.out.println("Stundent: "+jmeno+" (Ročník: "+rocnik+", Pruměr:"+prumer+"), Klasifikace: "+klasifikace());
     }
 
     @Override
     public String radekVypisu() {
-        int mezery = 20 - jmeno.length();
+        int mezery = 15 - jmeno.length();
         StringBuilder jmenoMezery = new StringBuilder(jmeno);
         for (int i = 0; i < mezery; i++) {
             jmenoMezery.append(" ");

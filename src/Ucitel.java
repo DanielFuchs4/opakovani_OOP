@@ -25,11 +25,16 @@ public class Ucitel extends Osoba implements IVypisovatelny{
     }
 
     public void popis(){
-
+        System.out.println("Učitel: "+jmeno+", vyučuje: "+predmet);
     }
 
     @Override
     public String radekVypisu() {
-        return "";
+        int mezery = 15 - jmeno.length();
+        StringBuilder jmenoMezery = new StringBuilder(jmeno);
+        for (int i = 0; i < mezery; i++) {
+            jmenoMezery.append(" ");
+        }
+        return jmenoMezery+"| přemět: "+predmet;
     }
 }
